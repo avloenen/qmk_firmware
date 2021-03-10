@@ -1,5 +1,5 @@
 #include "swapper.h"
-// Made by Callum
+// Made by Callum - little changes by me
 
 void update_swapper(
     bool *active,
@@ -22,7 +22,7 @@ void update_swapper(
             // Don't unregister cmdish until some other key is hit or released.
         }
     } else if (*active) {
-        if (keycode != alternative) {
+        if (keycode != alternative) { // keep cmd to switch between cmd-tab & cmd-grv
             unregister_code(cmdish);
             *active = false;
         }
