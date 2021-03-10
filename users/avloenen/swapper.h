@@ -1,5 +1,5 @@
 #pragma once
-// Made by Callum
+// Made by Callum - little changes by me
 
 #include QMK_KEYBOARD_H
 
@@ -11,6 +11,10 @@
 //     nav down, trigger, nav up -> nav down, cmd down, tab, cmd up, nav up
 //
 // This behaviour is useful for more than just cmd-tab, hence: cmdish, tabish.
+//
+// alternative can be used to be able to alternate between cmd-tab and cmd-grv
+// on macOS. use the trigger key for the other as alternative. for single function
+// use, just use trigger as alternative.
 void update_swapper(
     bool *active,
     uint16_t cmdish,
