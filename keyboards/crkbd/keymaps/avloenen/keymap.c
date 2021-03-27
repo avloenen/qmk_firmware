@@ -87,6 +87,7 @@ enum custom_keycodes {
     OS_CTRL,
     OS_ALT,
     OS_CMD,
+    OS_RCMD,
 
     SW_WIN,           // Switch to next window         (cmd-tab)
     SW_APP,           // Switch to next window of app  (cmd-grv)
@@ -134,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------.                  ,-----------------------------------------------.
      KC_TWM2,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,KC_BSPC,
   //|-------+-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------+-------|
-     KC_TWM1,KC_LBRC,KC_RBRC,KC_LCBR,KC_RCBR,KC_LPRN,                   KC_RPRN, OS_CMD,OS_SHFT, OS_ALT,OS_CTRL, KC_ENT,
+     KC_TWM1,KC_LBRC,KC_RBRC,KC_LCBR,KC_RCBR,KC_LPRN,                   KC_RPRN,OS_RCMD,OS_SHFT, OS_ALT,OS_CTRL, KC_ENT,
   //|-------+-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------+-------|
      KC_TILD,KC_EXLM,  KC_AT,KC_HASH, KC_DLR,KC_PERC,                   KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_PIPE,
   //|-------+-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------+-------|
@@ -146,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------.                  ,-----------------------------------------------.
      KC_TWM2,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,  RESET,
   //|-------+-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------+-------|
-     KC_TWM1,OS_CTRL, OS_ALT,OS_SHFT, OS_CMD, QWERTY,                   COLEMAK, OS_CMD,OS_SHFT, OS_ALT,OS_CTRL,KC_EXEC,
+     KC_TWM1,OS_CTRL, OS_ALT,OS_SHFT, OS_CMD, QWERTY,                   COLEMAK,OS_RCMD,OS_SHFT, OS_ALT,OS_CTRL,KC_EXEC,
   //|-------+-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------+-------|
        KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,                     KC_F7,  KC_F8,  KC_F9, KC_F10, KC_F11, KC_F12,
   //|-------+-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------+-------|
@@ -398,6 +399,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
         case OS_CTRL:
         case OS_ALT:
         case OS_CMD:
+	case OS_RCMD:
             return true;
         default:
             return false;
@@ -412,6 +414,7 @@ oneshot_state os_shft_state = os_up_unqueued;
 oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state  = os_up_unqueued;
 oneshot_state os_cmd_state  = os_up_unqueued;
+oneshot_state os_rcmd_state  = os_up_unqueued;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     update_swapper(&sw_win_active, KC_LGUI, KC_TAB, SW_WIN, keycode, record, SW_APP);
@@ -422,6 +425,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     update_oneshot(&os_ctrl_state, KC_LCTL, OS_CTRL, keycode, record);
     update_oneshot(&os_alt_state, KC_LALT, OS_ALT, keycode, record);
     update_oneshot(&os_cmd_state, KC_LCMD, OS_CMD, keycode, record);
+    update_oneshot(&os_rcmd_state, KC_RCMD, OS_RCMD, keycode, record);
 
     if (record->event.pressed) {
 #ifdef OLED_DRIVER_ENABLE
