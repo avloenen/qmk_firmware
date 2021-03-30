@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------------------------------.                          ,---------------------------------------.
       SW_APP, SW_WIN,   TABL,   TABR,KC_VOLU,                           KC_BRIU,   HOME,  KC_UP,   END,  KC_DEL,
   //|-------+-------+-------+-------+-------|                          |-------+-------+-------+-------+-------|
-     OS_SHFT,OS_CTRL, OS_ALT, OS_CMD,KC_VOLD,                           KC_BRID,KC_LEFT,KC_DOWN,KC_RGHT,KC_BSPC,
+     OS_CTRL, OS_ALT,OS_SHFT, OS_CMD,KC_VOLD,                           KC_BRID,KC_LEFT,KC_DOWN,KC_RGHT,KC_BSPC,
   //|-------+-------+-------+-------+-------+-------.          ,-------|-------+-------+-------+-------+-------|
       SPACEL, SPACER,   BACK,    FWD,KC_MUTE, KC_ENT,             KC_NO,  KC_NO,KC_PGDN,KC_PGUP,SW_LANG, KC_ENT,
   //|-------+-------+-------+-------+-------+-------|          |-------+-------+-------+-------+-------+-------|
@@ -132,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------------------------------.                          ,---------------------------------------.
         KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                              KC_6,   KC_7,   KC_8,   KC_9,   KC_0,
   //|-------+-------+-------+-------+-------|                          |-------+-------+-------+-------+-------|
-     KC_LBRC,KC_RBRC,KC_LCBR,KC_RCBR,KC_LPRN,                           KC_RPRN,OS_RCMD, OS_ALT,OS_CTRL,OS_SHFT,
+     KC_LBRC,KC_RBRC,KC_LCBR,KC_RCBR,KC_LPRN,                           KC_RPRN,OS_RCMD,OS_SHFT, OS_ALT,OS_CTRL,
   //|-------+-------+-------+-------+-------+-------.          ,-------|-------+-------+-------+-------+-------|
      KC_EXLM,  KC_AT,KC_HASH, KC_DLR,KC_PERC,KC_TILD,           KC_PIPE,KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,
   //|-------+-------+-------+-------+-------+-------|          |-------+-------+-------+-------+-------+-------|
@@ -144,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------------------------------.                          ,---------------------------------------.
         KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                              KC_6,   KC_7,   KC_8,   KC_9,   KC_0,
   //|-------+-------+-------+-------+-------|                          |-------+-------+-------+-------+-------|
-     OS_SHFT,OS_CTRL, OS_ALT, OS_CMD, QWERTY,                           COLEMAK,OS_RCMD, OS_ALT,OS_CTRL,OS_SHFT,
+     OS_CTRL, OS_ALT,OS_SHFT, OS_CMD, QWERTY,                           COLEMAK,OS_RCMD,OS_SHFT, OS_ALT,OS_CTRL,
   //|-------+-------+-------+-------+-------+-------.          ,-------|-------+-------+-------+-------+-------|
        KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,             KC_F7,  KC_F8,  KC_F9, KC_F10, KC_F11, KC_F12,
   //|-------+-------+-------+-------+-------+-------|          |-------+-------+-------+-------+-------+-------|
@@ -156,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------------------------------.                          ,---------------------------------------.
      KC_BRID,KC_BRIU,  KC_NO,  KC_NO,KC_LCBR,                           KC_RCBR,   KC_7,   KC_8,   KC_9,KC_BSPC,
   //|-------+-------+-------+-------+-------|                          |-------+-------+-------+-------+-------|
-     OS_SHFT,OS_CTRL, OS_ALT, OS_CMD,KC_LPRN,                           KC_RPRN,   KC_4,   KC_5,   KC_6,KC_MINS,
+     OS_CTRL, OS_ALT,OS_SHFT, OS_CMD,KC_LPRN,                           KC_RPRN,   KC_4,   KC_5,   KC_6,KC_MINS,
   //|-------+-------+-------+-------+-------+-------.          ,-------|-------+-------+-------+-------+-------|
      KC_MSTP,KC_MPLY,  KC_NO,  KC_NO,KC_LBRC,KC_UNDS,            KC_EQL,KC_RBRC,   KC_1,   KC_2,   KC_3,KC_PLUS,
   //|-------+-------+-------+-------+-------+-------|          |-------+-------+-------+-------+-------+-------|
