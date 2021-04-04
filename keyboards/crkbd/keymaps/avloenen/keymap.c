@@ -18,8 +18,10 @@ extern uint8_t is_master;
 enum layers { _QWERTY, _COLEMAK, _LOWER, _RAISE, _ADJUST, _NUM };
 
 // Keycodes for special combinations, useful for navigation and layer change
-#define HOME G(KC_LEFT)
-#define END G(KC_RGHT)
+//#define HOME G(KC_LEFT)
+#define HOME KC_HOME
+//#define END G(KC_RGHT)
+#define END KC_END
 #define FWD G(KC_RBRC)
 #define BACK G(KC_LBRC)
 #define TABL G(S(KC_LBRC))
@@ -27,8 +29,10 @@ enum layers { _QWERTY, _COLEMAK, _LOWER, _RAISE, _ADJUST, _NUM };
 #define SPACEL A(G(KC_LEFT))
 #define SPACER A(G(KC_RGHT))
 
-#define LA_SYM MO(_RAISE)
-#define LA_NAV MO(_LOWER)
+//#define LA_SYM MO(_RAISE)
+#define LA_SYM LT(_RAISE, KC_SPC)
+//#define LA_NAV MO(_LOWER)
+#define LA_NAV LT(_LOWER, KC_BSPC)
 #define LA_NUM MO(_NUM)
 #define OSM_SFT OSM(MOD_LSFT)
 #define CMD_BS LGUI_T(KC_BSPC)
